@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 
 # get the user's chosen pokémon
-pokemon = input("Enter a Pokemon:")
+pokemon = input("Enter a Pokemon: ")
 
 # get the bulbapedia URL for the pokémon chosen
 baseurl = f"https://bulbapedia.bulbagarden.net/wiki/{pokemon.capitalize()}_(Pok%C3%A9mon)"
