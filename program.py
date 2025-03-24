@@ -1,11 +1,10 @@
 import requests
 from bs4 import BeautifulSoup
-import html.parser
 
 # referencing: https://www.geeksforgeeks.org/python-web-scraping-tutorial/
 
 # get the bulbapedia URL for the pokemon shinx, for example
-baseurl = "https://bulbapedia.bulbagarden.net/wiki/Shinx_(Pok%C3%A9mon)"
+baseurl = "https://bulbapedia.bulbagarden.net/wiki/Bibarel_(Pok%C3%A9mon)"
 req = requests.get(baseurl)
 
 types = ["Normal", "Fire", "Fighting", "Water", "Flying", "Grass", "Poison", "Electric", "Ground",
@@ -19,7 +18,7 @@ souped = BeautifulSoup(req.content, 'html.parser')
 
 # get needed type info based on attributes
 type_info = souped.find("td", attrs={"width": "45px"})
+second_type = type_info.find_next("td", attrs={"width": "45px"})
 
 print(type_info.text)
-
-
+print(second_type.text)
