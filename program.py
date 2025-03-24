@@ -17,17 +17,9 @@ print(req)
 souped = BeautifulSoup(req.content, 'html.parser')
 #print(souped.prettify)
 
-# get all tables with the class of 'infobox'
-basic_info = souped.find("td", attrs={"width": "45px"})
-# get all content on the page that's in a paragraph tag
+# get needed type info based on attributes
+type_info = souped.find("td", attrs={"width": "45px"})
 
-type = ""
-result = ""
-span = ""
-
-print(basic_info.contents)
-    
-print(type)
-print(result)
+print(type_info.text)
 
 
