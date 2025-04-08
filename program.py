@@ -5,7 +5,9 @@ from bs4 import BeautifulSoup
 pokemon = input("Enter a Pokemon: ")
 
 # get the bulbapedia URL for the pokémon chosen
-baseurl = f"https://bulbapedia.bulbagarden.net/wiki/{pokemon.capitalize()}_(Pok%C3%A9mon)"
+# for pokémon with a dash in their names, make sure you enter the dash and proper capitalization
+# for all other pokemon, capitalization doesn't seem to matter to bulbapedia
+baseurl = f"https://bulbapedia.bulbagarden.net/wiki/{pokemon}_(Pok%C3%A9mon)"
 req = requests.get(baseurl)
 
 # list of existing pokemon types
