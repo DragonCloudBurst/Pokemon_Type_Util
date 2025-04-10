@@ -41,14 +41,15 @@ def getPokemon(pokemon: str, regional: bool = False):
 
         first_type = type_info_4.text.strip()
 
-        if second_type:
-            print(f"Regional {pokemon.capitalize()} is a {first_type} and {second_type} type Pokémon.")
-            return
+        if first_type != "Unknown":
+            if second_type:
+                print(f"Regional {pokemon.capitalize()} is a {first_type} and {second_type} type Pokémon.")
+                return
+            else:
+                print(f"Regional {pokemon.capitalize()} is a {first_type} type Pokémon.")
+                return
         else:
-            print(f"Regional {pokemon.capitalize()} is a {first_type} type Pokémon.")
-            return
-        
-        return
+            print(f"{pokemon.capitalize()} does not have a regional form.")
 
     # get needed type info based on html attributes
     if req:
